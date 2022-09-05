@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function num(){
+                var A = document.getElementById("first")
+                var aa = A.value
+                var B = document.getElementById("second")
+                var bb = B.value
+                var option= document.getElementById("sel").value
+                if(option=="plus"){
+                    var answer = parseInt(aa)+parseInt(bb)
+                }
+                else if(option=="minus"){
+                    var answer = parseInt(aa)-parseInt(bb)
+                }else if(option=="multiply"){
+                    var answer = parseInt(aa)*parseInt(bb)
+                }else{
+                    if(bb==0){
+                        alert("can't divide by zero")
+                    }else{
+                        var answer = parseInt(aa)/parseInt(bb)
+                    }
+                }
+                var ANS = document.getElementById("ans")
+                ANS.value = answer
+            }
+
+        </script>
+    </head>
+    <body>
+        <form target="_blank">
+            <input type="text" id="first">
+            <select id="sel">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="text" id="second"> =
+            <input type="text" id="ans">
+            <input type="button" onclick="num()" value="Computer">
+        </form>
+    </body>
+</html>
